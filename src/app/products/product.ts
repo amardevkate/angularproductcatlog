@@ -7,7 +7,9 @@ export interface IProduct {
   description: string;
   starRating: number;
   imageUrl: string;
- // calculateDiscount(percent: number): number;
+  category: string;
+  size: number
+  // calculateDiscount(percent: number): number;
 }
 
 export class product implements IProduct {
@@ -18,7 +20,10 @@ export class product implements IProduct {
     public price: number,
     public description: string,
     public starRating: number,
-    public imageUrl: string) { }
+    public imageUrl: string,
+    public category: string,
+    public size: number
+  ) { }
   calculateDiscount(percent: number): number {
     return this.price - (this.price * percent / 100);
   }

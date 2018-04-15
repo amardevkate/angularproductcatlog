@@ -5,32 +5,38 @@ import { AppComponent } from './app.component';
 import { prouctListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
-import { ProductService } from './products/product.service';
 import { HttpClientModule } from "@angular/common/http";
-import {RouterModule } from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { WelcomeComponent } from './home/welcome.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductGuardService } from './products/product-guard.service';
+import { ProductService } from './products/product.service';
+
 
 
 @NgModule({
 
   declarations: [
     AppComponent,
-  prouctListComponent,
+    prouctListComponent,
     ConvertToSpacesPipe,
     StarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([{
-      path: "products", component: prouctListComponent
-    },
-      {path:"welcome",component:WelcomeComponent }
+    RouterModule.forRoot([
+      { path: "products", component: prouctListComponent },
+      { path: "products/:id", canActivate: [ProductGuardService], component: ProductDetailsComponent },
+      { path: "welcome", component: WelcomeComponent },
+      { path: "", redirectTo: "welcome", pathMatch: "full" },
+      { path: "**", redirectTo: "welcome", pathMatch: "full" }
     ])
   ],
-  providers: [],
+  providers: [ProductGuardService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
