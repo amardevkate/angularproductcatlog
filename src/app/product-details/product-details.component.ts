@@ -17,12 +17,17 @@ export class ProductDetailsComponent implements OnInit {
   _product: IProduct;
   imageMargin: number = 15;
   imageWidth: number = 200;
-    ngOnInit(): void {
+  ngOnInit(): void {
     let Id = +this._route.snapshot.paramMap.get("id");
     this._productserver.getProducts()
       .subscribe(products => {
-        this._product = products.find((p:IProduct)=>p.productId==Id);
+        this._product = products.find((p: IProduct) => p.productId == Id);
+        console.log(this._product.description);
+        var asb =this._product.ThumbNailPhoto;
+        var c = btoa(asb);
+        console.log(btoa(asb));
       });
+
   }
 
   Onback(): void {

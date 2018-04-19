@@ -26,11 +26,11 @@ export class ProductService {
       })
     };
 
-    const _headers = new HttpHeaders();
-    _headers.set('Access-Control-Allow-Origin', '*');
-    _headers.set('Accept', '*/*');
+    //const _headers = new HttpHeaders();
+    //_headers.set('Access-Control-Allow-Origin', '*');
+    //_headers.set('Accept', '*/*');
 
-    return this._http.get<IProduct[]>(this._productUrl, { headers: _headers })
+    return this._http.get<IProduct[]>(this._productUrl, httpOptions)
       .catch(this.handleError);
   }
 

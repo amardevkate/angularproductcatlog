@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node_modules\\base64-arraybuffer",
     "\\src",
+    "\\src\\api",
+    "\\src\\api\\products",
     "\\src\\app",
+    "\\src\\app\\product-details",
     "\\src\\app\\products",
     "\\src\\app\\shared"
   ],
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
