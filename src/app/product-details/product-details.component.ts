@@ -19,13 +19,9 @@ export class ProductDetailsComponent implements OnInit {
   imageWidth: number = 200;
   ngOnInit(): void {
     let Id = +this._route.snapshot.paramMap.get("id");
-    this._productserver.getProducts()
+    this._productserver.getProductByID(Id)
       .subscribe(products => {
-        this._product = products.find((p: IProduct) => p.productId == Id);
-        console.log(this._product.description);
-        var asb =this._product.ThumbNailPhoto;
-        var c = btoa(asb);
-        console.log(btoa(asb));
+        this._product = products;
       });
 
   }

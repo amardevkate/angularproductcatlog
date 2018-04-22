@@ -11,9 +11,6 @@ import { WelcomeComponent } from './home/welcome.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductGuardService } from './products/product-guard.service';
 import { ProductService } from './products/product.service';
-import { convertByteToPipe } from './shared/convert-byte-tostring.pipe';
-
-
 
 
 @NgModule({
@@ -22,7 +19,6 @@ import { convertByteToPipe } from './shared/convert-byte-tostring.pipe';
     AppComponent,
     prouctListComponent,
     ConvertToSpacesPipe,
-    convertByteToPipe,
     StarComponent,
     WelcomeComponent,
     ProductDetailsComponent

@@ -13,8 +13,6 @@ export class ProductService {
   constructor(private _http: HttpClient) {
   }
 
-
-
   private _productUrl = "https://amarecommerceapi.azurewebsites.net/api/product";
   getProducts(): Observable<IProduct[]> {
 
@@ -31,6 +29,17 @@ export class ProductService {
     //_headers.set('Accept', '*/*');
 
     return this._http.get<IProduct[]>(this._productUrl, httpOptions)
+      .catch(this.handleError);
+  }
+
+  getProductByID(ID: number): Observable<IProduct> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+    return this._http.get<IProduct>(this._productUrl+"/"+ID, httpOptions)
       .catch(this.handleError);
   }
 

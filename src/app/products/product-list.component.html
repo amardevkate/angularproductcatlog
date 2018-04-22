@@ -36,7 +36,7 @@
         <tbody>
           <tr *ngFor='let product of filteredProduct'>
             <td>
-              <img [src]="product.imageUrl" [style.margin.px]="imageMargin" [style.width.px]="imageWidth" [title]="product.productName | uppercase" *ngIf="showImage" />
+              <img src="data:image/jpeg;base64,{{product.thumbNailPhoto}}" [style.margin.px]="imageMargin" [style.width.px]="imageWidth" [title]="product.productName | uppercase" *ngIf="showImage" />
             </td>
             <td>
               <a [routerLink]="['/products',product.productId]">
