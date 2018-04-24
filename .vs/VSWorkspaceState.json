@@ -3,10 +3,11 @@
     "",
     "\\src",
     "\\src\\api",
-    "\\src\\api\\products",
     "\\src\\app",
+    "\\src\\app\\product",
+    "\\src\\app\\products",
     "\\src\\app\\shared"
   ],
-  "SelectedNode": "\\src\\app\\app.component.html",
+  "SelectedNode": "\\src\\app\\products\\product-list.component.html",
   "PreviewInSolutionExplorer": false
 }

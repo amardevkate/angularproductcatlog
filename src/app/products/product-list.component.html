@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
- 
+
   <div class="panel-heading" innerText="{{pageTitle}}">
- 
+
   </div>
   <div class='panel-body'>
     <div class='row'>
@@ -15,6 +15,10 @@
         <h3>Filtered by:{{listFilter}} </h3>
       </div>
     </div>
+    <button *ngIf="products==null || products.length==0" class="btn btn-lg btn-warning">
+      <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
+      </span> Loading...
+    </button>
     <div class='table-responsive'>
       <table class='table'
              *ngIf='products && products.length'>
@@ -41,7 +45,8 @@
             <td>
               <a [routerLink]="['/products',product.productId]">
                 {{ product.productName }}
-              </a></td>
+              </a>
+            </td>
             <td>{{ product.productCode | lowercase | convertToSpaces:'-' }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price|currency:'USD':true:'1.2-2' }}</td>
