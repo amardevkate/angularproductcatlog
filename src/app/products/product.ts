@@ -1,3 +1,5 @@
+import { IReviews } from "../review/reviews";
+
 
 export interface IProduct {
   productId: number;
@@ -12,6 +14,7 @@ export interface IProduct {
   size: number;
   largePhoto: any;
   thumbNailPhoto: any;
+  reviews: IReviews[];
 
   // calculateDiscount(percent: number): number;
 }
@@ -29,6 +32,7 @@ export class product implements IProduct {
     public size: number,
     public largePhoto: any,
     public thumbNailPhoto: any,
+    public reviews: IReviews[]
   ) { }
   calculateDiscount(percent: number): number {
     return this.price - (this.price * percent / 100);

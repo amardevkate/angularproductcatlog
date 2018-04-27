@@ -1,0 +1,39 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Product Reviews
+  </div>
+  <div class="panel-body">
+
+    <div *ngFor='let review of reviews'>
+      <div class="row">
+        <div class="col">
+          {{review.name}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          {{review.comments}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          {{review.createdDate}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <pm-star [rating]="review.rating"></pm-star>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="newreview">
+  <input type="text" name="name" placeholder="Enter Name" [(ngModel)]="newreview.name" />
+  {{newreview.name}}
+</div>

@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { StarComponent } from './shared/star.component';
 import { HttpClientModule } from "@angular/common/http";
-import { RouterModule } from "@angular/router";
-import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
-
+import { AppRoutingModule } from './routing/app-routing.module';
+import { WelcomeComponent } from './home/welcome.component';
 
 @NgModule({
 
@@ -17,13 +15,9 @@ import { ProductModule } from './products/product.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: "welcome", component: WelcomeComponent },
-      { path: "", redirectTo: "welcome", pathMatch: "full" },
-      { path: "**", redirectTo: "welcome", pathMatch: "full" }
-    ]),
-    ProductModule
-  ],
+     ProductModule,
+    AppRoutingModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ProductGuardService } from './product-guard.service';
 import { ProductService } from './product.service';
 import { SharedModule } from './../shared/shared.module';
+import { ReviewsComponent } from '../review/reviews.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { SharedModule } from './../shared/shared.module';
   ],
   declarations: [
     prouctListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ReviewsComponent
   ],
   providers: [ProductService, ProductGuardService]
 })
